@@ -1,17 +1,8 @@
+import cors from "cors";
 import express from "express";
 
 const app = express();
 app.use(cors({ origin: ["http://localhost:5173"] }));
-
-app.get("/api/employees", (req, res) => {
-  res.json([sampleEmployee]);
-});
-
-const port = 8080;
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
 
 const sampleEmployee = {
   name: {
@@ -23,3 +14,13 @@ const sampleEmployee = {
     medium: "https://randomuser.me/api/portraits/med/men/40.jpg",
   },
 };
+
+app.get("/api/employees", (req, res) => {
+  res.json([sampleEmployee]);
+});
+
+const port = 3310;
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
